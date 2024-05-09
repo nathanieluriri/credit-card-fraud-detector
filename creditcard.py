@@ -98,7 +98,7 @@ def create_result_dataframe():
 
 
 st.file_uploader("Upload a csv containing the apporpriate information",type=["csv"],key="file")
-one,two= st.tabs([" :red[User Uploaded File] &mdash; :sunflower::blossom: ",":green[User filled in the details manually] &mdash;  :rose::hibiscus:"])
+one,two= st.tabs([" **:gray[**User Uploaded File**]** &mdash; :sunflower::blossom: ","**:gray[**User filled in the details manually**]** &mdash;  :rose::hibiscus:"])
 with st.sidebar:
     st.number_input("Enter Details For time",key="time",step=1,min_value=0)
     for i in range(1, 29):
@@ -132,7 +132,7 @@ with one:
 with two:
     st.session_state.prediction=create_dataframe()
     
-    if st.button(":green[make prediction]",type="primary"):
+    if st.button("**:gray[**make prediction**]**",type="primary"):
         st.success("Predicted result column is the last one so keep on scrolling")
         result_from_users=st.session_state.model.fit_predict(st.session_state.prediction)
         st.write(create_result_dataframe())
