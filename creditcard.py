@@ -132,7 +132,7 @@ with one:
 with two:
     st.session_state.prediction=create_dataframe()
     
-    if st.button("make prediction",type="primary"):
+    if st.button(":green[make prediction]",type="primary"):
         st.success("Predicted result column is the last one so keep on scrolling")
         result_from_users=st.session_state.model.fit_predict(st.session_state.prediction)
         st.write(create_result_dataframe())
